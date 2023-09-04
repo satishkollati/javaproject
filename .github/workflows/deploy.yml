@@ -24,14 +24,14 @@ jobs:
     build:
     runs-on: self-hosted
     steps:
-    - name: fetch code
+     - name: fetch code
       uses: actions/checkout@v3    
   
-    - name: install dependencies
+     - name: install dependencies
       uses: actions/setup-java@v3
       with:
        distribution: 'temurin'
        java-version: '17'
        cache: 'maven'
-    - name: build the code
-      run: mvn clean install
+     - name: build the code
+       run: mvn clean install

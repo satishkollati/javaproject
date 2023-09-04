@@ -20,6 +20,7 @@ jobs:
        run: mvn test
     
     build:
+        needs: testing
      runs-on: self-hosted
      steps:
          - name: fetch code

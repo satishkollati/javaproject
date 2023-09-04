@@ -5,8 +5,8 @@ on:
      branches:
          - master  
 jobs:
-    runs-on: self-hosted
     testing:
+    runs-on: self-hosted   
          - name: fetch code
            uses: actions/checkout@v3    
          
@@ -21,5 +21,15 @@ jobs:
            run: mvn test
     
     build:
-         - name: build the code
-           run: mvn clean install
+    runs-on: self-hosted
+    - name: fetch code
+      uses: actions/checkout@v3    
+  
+    - name: install dependencies
+      uses: actions/setup-java@v3
+      with:
+       distribution: 'temurin'
+       java-version: '17'
+       cache: 'maven'
+    - name: build the code
+      run: mvn clean install

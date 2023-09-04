@@ -8,16 +8,16 @@ jobs:
     testing:
     runs-on: self-hosted  
     steps:  
-         - name: fetch code
-           uses: actions/checkout@v3    
-         - name: install dependencies
-           uses: actions/setup-java@v3
-           with:
-            distribution: 'temurin'
-            java-version: '17'
-            cache: 'maven'
-         - name: unit testing
-           run: mvn test
+     - name: fetch code
+       uses: actions/checkout@v3    
+     - name: install dependencies
+       uses: actions/setup-java@v3
+       with:
+        distribution: 'temurin'
+        java-version: '17'
+        cache: 'maven'
+     - name: unit testing
+       run: mvn test
     
     build:
     runs-on: self-hosted

@@ -1,0 +1,25 @@
+name: test github actions
+on:
+  workflow_dispatch:
+  push:
+     branches:
+         - master  
+jobs:
+    runs-on: self-hosted
+    testing:
+         - name: fetch code
+           uses: actions/checkout@v3    
+         
+         - name: install dependencies
+           uses: actions/setup-java@v3
+           with:
+            distribution: 'temurin'
+            java-version: '17'
+            cache: 'maven'
+
+         - name: unit testing
+           run: mvn test
+    
+    build:
+         - name: build the code
+           run: mvn clean install

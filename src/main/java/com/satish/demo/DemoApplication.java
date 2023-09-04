@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 	@GetMapping("/")
 	public String index() {
-		return "Greetings from Ss!";
+		return "Greetings from Satish!";
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);

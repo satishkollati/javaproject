@@ -5,7 +5,7 @@ on:
       branches: [ main ]
   
 env: 
- AWS_REGION : <"ap-south-1"> #Change to reflect your Region
+ AWS_REGION : ap-south-1 #Change to reflect your Region
   
   # Permission can be added at job level or workflow level    
 permissions:
@@ -21,7 +21,7 @@ jobs:
           uses: aws-actions/configure-aws-credentials@v1.7.0
           with:
             
-            role-to-assume: <arn:aws:iam::502305443874:role/github> #change to reflect your IAM role’s ARN
+            role-to-assume: arn:aws:iam::502305443874:role/github #change to reflect your IAM role’s ARN
             role-session-name: github
             aws-region: ${{ env.AWS_REGION }}
         # Hello from AWS: WhoAmI
